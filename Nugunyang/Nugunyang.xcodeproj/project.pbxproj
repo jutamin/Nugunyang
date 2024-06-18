@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B07A1EE2C211E9E0061FC8D /* ImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07A1ED2C211E9E0061FC8D /* ImageClassification.swift */; };
+		8B07A1F02C211F0E0061FC8D /* MyCatImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8B07A1EF2C211F0E0061FC8D /* MyCatImageClassifier.mlmodel */; };
+		8B07A1F22C211FB60061FC8D /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07A1F12C211FB60061FC8D /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
+		8B07A1F42C211FFE0061FC8D /* ImageClassificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07A1F32C211FFE0061FC8D /* ImageClassificationView.swift */; };
+		8B07A1F72C2124B60061FC8D /* Glur in Frameworks */ = {isa = PBXBuildFile; productRef = 8B07A1F62C2124B60061FC8D /* Glur */; };
 		8BD6D4B12C20460600FD659A /* NugunyangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6D4B02C20460600FD659A /* NugunyangApp.swift */; };
 		8BD6D4B32C20460600FD659A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6D4B22C20460600FD659A /* ContentView.swift */; };
 		8BD6D4B52C20460900FD659A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD6D4B42C20460900FD659A /* Assets.xcassets */; };
@@ -39,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B07A1ED2C211E9E0061FC8D /* ImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassification.swift; sourceTree = "<group>"; };
+		8B07A1EF2C211F0E0061FC8D /* MyCatImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyCatImageClassifier.mlmodel; sourceTree = "<group>"; };
+		8B07A1F12C211FB60061FC8D /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
+		8B07A1F32C211FFE0061FC8D /* ImageClassificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationView.swift; sourceTree = "<group>"; };
 		8BD6D4AD2C20460600FD659A /* Nugunyang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nugunyang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD6D4B02C20460600FD659A /* NugunyangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NugunyangApp.swift; sourceTree = "<group>"; };
 		8BD6D4B22C20460600FD659A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B07A1F72C2124B60061FC8D /* Glur in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +124,10 @@
 				8BD6D4B22C20460600FD659A /* ContentView.swift */,
 				8BD6D4B42C20460900FD659A /* Assets.xcassets */,
 				8BD6D4B62C20460900FD659A /* Preview Content */,
+				8B07A1ED2C211E9E0061FC8D /* ImageClassification.swift */,
+				8B07A1F32C211FFE0061FC8D /* ImageClassificationView.swift */,
+				8B07A1F12C211FB60061FC8D /* CGImagePropertyOrientation+UIImageOrientation.swift */,
+				8B07A1EF2C211F0E0061FC8D /* MyCatImageClassifier.mlmodel */,
 			);
 			path = Nugunyang;
 			sourceTree = "<group>";
@@ -200,6 +214,9 @@
 			dependencies = (
 			);
 			name = Nugunyang;
+			packageProductDependencies = (
+				8B07A1F62C2124B60061FC8D /* Glur */,
+			);
 			productName = Nugunyang;
 			productReference = 8BD6D4AD2C20460600FD659A /* Nugunyang.app */;
 			productType = "com.apple.product-type.application";
@@ -272,6 +289,9 @@
 				Base,
 			);
 			mainGroup = 8BD6D4A42C20460600FD659A;
+			packageReferences = (
+				8B07A1F52C2124B60061FC8D /* XCRemoteSwiftPackageReference "Glur" */,
+			);
 			productRefGroup = 8BD6D4AE2C20460600FD659A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -317,8 +337,12 @@
 			files = (
 				8BD6D4E52C204AA700FD659A /* PoCatCatalogueView.swift in Sources */,
 				8BD6D4B32C20460600FD659A /* ContentView.swift in Sources */,
+				8B07A1EE2C211E9E0061FC8D /* ImageClassification.swift in Sources */,
 				8BD6D4B12C20460600FD659A /* NugunyangApp.swift in Sources */,
+				8B07A1F42C211FFE0061FC8D /* ImageClassificationView.swift in Sources */,
+				8B07A1F22C211FB60061FC8D /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				8BD6D4DF2C2049E500FD659A /* Camera.swift in Sources */,
+				8B07A1F02C211F0E0061FC8D /* MyCatImageClassifier.mlmodel in Sources */,
 				8BD6D4E32C204A0900FD659A /* CameraViewModel.swift in Sources */,
 				8BD6D4E12C2049F500FD659A /* CameraView.swift in Sources */,
 			);
@@ -484,9 +508,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nugunyang/Preview Content\"";
+				DEVELOPMENT_TEAM = GF3B5LP7RQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nugunyang/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "이런 이유로 카메라 필요합니다";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -512,9 +538,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nugunyang/Preview Content\"";
+				DEVELOPMENT_TEAM = GF3B5LP7RQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nugunyang/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "이런 이유로 카메라 필요합니다";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -644,6 +672,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B07A1F52C2124B60061FC8D /* XCRemoteSwiftPackageReference "Glur" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joogps/Glur";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B07A1F62C2124B60061FC8D /* Glur */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B07A1F52C2124B60061FC8D /* XCRemoteSwiftPackageReference "Glur" */;
+			productName = Glur;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8BD6D4A52C20460600FD659A /* Project object */;
 }
