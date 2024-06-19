@@ -12,6 +12,12 @@
 		8B07A1F22C211FB60061FC8D /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07A1F12C211FB60061FC8D /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		8B07A1F42C211FFE0061FC8D /* ImageClassificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07A1F32C211FFE0061FC8D /* ImageClassificationView.swift */; };
 		8B07A1F72C2124B60061FC8D /* Glur in Frameworks */ = {isa = PBXBuildFile; productRef = 8B07A1F62C2124B60061FC8D /* Glur */; };
+		8BA4999E2C21623B00559727 /* MosuCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4999D2C21623B00559727 /* MosuCamera.swift */; };
+		8BA499A02C21627C00559727 /* MosuDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4999F2C21627C00559727 /* MosuDataModel.swift */; };
+		8BA499A22C21631600559727 /* MosuCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA499A12C21631600559727 /* MosuCameraView.swift */; };
+		8BA499A42C21641D00559727 /* MosuViewfinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA499A32C21641D00559727 /* MosuViewfinderView.swift */; };
+		8BA499A62C2174D500559727 /* NewCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA499A52C2174D500559727 /* NewCameraView.swift */; };
+		8BA499AE2C225F4000559727 /* NewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA499AD2C225F4000559727 /* NewViewModel.swift */; };
 		8BD6D4B12C20460600FD659A /* NugunyangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6D4B02C20460600FD659A /* NugunyangApp.swift */; };
 		8BD6D4B32C20460600FD659A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6D4B22C20460600FD659A /* ContentView.swift */; };
 		8BD6D4B52C20460900FD659A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD6D4B42C20460900FD659A /* Assets.xcassets */; };
@@ -48,6 +54,12 @@
 		8B07A1EF2C211F0E0061FC8D /* MyCatImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyCatImageClassifier.mlmodel; sourceTree = "<group>"; };
 		8B07A1F12C211FB60061FC8D /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		8B07A1F32C211FFE0061FC8D /* ImageClassificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationView.swift; sourceTree = "<group>"; };
+		8BA4999D2C21623B00559727 /* MosuCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosuCamera.swift; sourceTree = "<group>"; };
+		8BA4999F2C21627C00559727 /* MosuDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosuDataModel.swift; sourceTree = "<group>"; };
+		8BA499A12C21631600559727 /* MosuCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosuCameraView.swift; sourceTree = "<group>"; };
+		8BA499A32C21641D00559727 /* MosuViewfinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosuViewfinderView.swift; sourceTree = "<group>"; };
+		8BA499A52C2174D500559727 /* NewCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCameraView.swift; sourceTree = "<group>"; };
+		8BA499AD2C225F4000559727 /* NewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewModel.swift; sourceTree = "<group>"; };
 		8BD6D4AD2C20460600FD659A /* Nugunyang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nugunyang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD6D4B02C20460600FD659A /* NugunyangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NugunyangApp.swift; sourceTree = "<group>"; };
 		8BD6D4B22C20460600FD659A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -162,6 +174,9 @@
 			children = (
 				8BD6D4E02C2049F500FD659A /* CameraView.swift */,
 				8BD6D4E42C204AA700FD659A /* PoCatCatalogueView.swift */,
+				8BA499A12C21631600559727 /* MosuCameraView.swift */,
+				8BA499A32C21641D00559727 /* MosuViewfinderView.swift */,
+				8BA499A52C2174D500559727 /* NewCameraView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				8BD6D4E22C204A0900FD659A /* CameraViewModel.swift */,
+				8BA499AD2C225F4000559727 /* NewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -178,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				8BD6D4DE2C2049E500FD659A /* Camera.swift */,
+				8BA4999D2C21623B00559727 /* MosuCamera.swift */,
+				8BA4999F2C21627C00559727 /* MosuDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,16 +353,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA499A22C21631600559727 /* MosuCameraView.swift in Sources */,
 				8BD6D4E52C204AA700FD659A /* PoCatCatalogueView.swift in Sources */,
 				8BD6D4B32C20460600FD659A /* ContentView.swift in Sources */,
+				8BA499A62C2174D500559727 /* NewCameraView.swift in Sources */,
 				8B07A1EE2C211E9E0061FC8D /* ImageClassification.swift in Sources */,
 				8BD6D4B12C20460600FD659A /* NugunyangApp.swift in Sources */,
 				8B07A1F42C211FFE0061FC8D /* ImageClassificationView.swift in Sources */,
 				8B07A1F22C211FB60061FC8D /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				8BD6D4DF2C2049E500FD659A /* Camera.swift in Sources */,
 				8B07A1F02C211F0E0061FC8D /* MyCatImageClassifier.mlmodel in Sources */,
+				8BA4999E2C21623B00559727 /* MosuCamera.swift in Sources */,
+				8BA499A02C21627C00559727 /* MosuDataModel.swift in Sources */,
 				8BD6D4E32C204A0900FD659A /* CameraViewModel.swift in Sources */,
 				8BD6D4E12C2049F500FD659A /* CameraView.swift in Sources */,
+				8BA499AE2C225F4000559727 /* NewViewModel.swift in Sources */,
+				8BA499A42C21641D00559727 /* MosuViewfinderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
