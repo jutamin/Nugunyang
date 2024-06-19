@@ -12,6 +12,8 @@ struct NugunyangApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//            MosuCameraView()
+//            NewCameraView()
         }
     }
 }

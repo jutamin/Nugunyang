@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            CameraView()
+            NewCameraView()
                 .tabItem {
                     Label("누구냥", systemImage: "camera.fill")
                 }
