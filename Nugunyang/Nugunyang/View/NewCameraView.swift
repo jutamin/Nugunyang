@@ -9,39 +9,40 @@ import SwiftUI
 
 struct NewCameraView: View {
     @StateObject private var model = MosuDataModel()
-//    @ObservedObject var viewModel = CameraViewModel()
+    //    @ObservedObject var viewModel = CameraViewModel()
     private static let barHeightFactor = 0.15
     
+    @State var isfounded = false
     
     var body: some View {
-            GeometryReader { geometry in
-                VStack {
-                    MosuViewfinderView(image: $model.viewfinderImage)
-                        .overlay(alignment: .bottom) {
+        GeometryReader { geometry in
+            VStack {
+                MosuViewfinderView(image: $model.viewfinderImage)
+                    .overlay(alignment: .bottom) {
+                        if isfounded == true {
+                            foundView()
+                        } else {
                             buttonsView()
                                 .frame(height: geometry.size.height * Self.barHeightFactor)
                                 .background(.black)
                         }
-                        .background(.black)
-                    
-                    Text(model.resultString)
-                        .font(.title)
-                        .padding(.bottom, 24)
-                }
+                        
+                    }
+                    .background(.black)
             }
-            .task {
-                await model.camera.start()
+        }
+        .task {
+            await model.camera.start()
         }
     }
     
     private func buttonsView() -> some View {
         HStack {
-
             Spacer().frame(width: 145)
-
             // 사진 찍기 버튼
             Button {
                 model.camera.takePhoto()
+                isfounded = true
             } label: {
                 Circle()
                     .foregroundStyle(Color.secondary)
@@ -53,10 +54,11 @@ struct NewCameraView: View {
                             .foregroundColor(Color.white)
                             .frame(width: 40, height: 40)
                     )
+                //                }
             }
             
             Spacer()
-
+            
             // 전후면 카메라 교체
             Button {
                 model.camera.switchCaptureDevice()
@@ -69,13 +71,78 @@ struct NewCameraView: View {
             }
             .frame(width: 75, height: 75)
             .padding()
-
+            
         }
     }
     
+    private func foundView() -> some View {
+        VStack{
+            HStack {
+                VStack(alignment: .leading){
+                    Text("\(model.resultString)를 찾았어요!🎉🎉")
+                        .foregroundStyle(.white)
+                        .font(.title3)
+                        .padding()
+                    Text("처음 만나는 냥이 안녕 👋")
+                        .foregroundStyle(.white)
+//                        .padding()
+                }
+                Image(systemName: "cat")
+                    .foregroundColor(.white)
+                    .frame(width: 70, height: 70)
+            }
+            Spacer()
+            HStack(spacing: 10) {
+                Button{
+                    isfounded = false
+                } label: {Text("취소")
+                        .font(.title2)
+                        .foregroundStyle(Color.white)
+                        .frame(width: 120, height: 60)
+                        .background(Color.secondary)
+                        .cornerRadius(20)
+                }
+                
+                Button{
+                    isfounded.toggle()
+                } label: {
+                    Text("포냥도감에 추가하기!")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color.white)
+                        .frame(width: 220, height: 60)
+                        .background(Color.accentColor)
+                        .cornerRadius(20)
+                }
+            }
+            Spacer().frame(height:20)
+
+            
+        }
+        .frame(maxWidth: .infinity, maxHeight: 200)
+        .background(Color.black)
+        .cornerRadius(20, corners: [.topLeft, .topRight])
+    }
     
 }
-//
+
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape(RoundedCorner(radius: radius, corners: corners))
+    }
+}
+
+struct RoundedCorner: Shape {
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        
+        return Path(path.cgPath)
+    }
+}
+
 //#Preview {
 //    NewCameraView()
 //}
