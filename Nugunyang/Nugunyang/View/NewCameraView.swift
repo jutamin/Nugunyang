@@ -18,6 +18,14 @@ struct NewCameraView: View {
         GeometryReader { geometry in
             VStack {
                 MosuViewfinderView(image: $model.viewfinderImage)
+                //                    .gesture(MagnificationGesture()
+                //                        .onChanged{ val in
+                //                            model.zoom(factor: val)
+                //                        }
+                //                        .onEnded{ _ in
+                //                            model.zoomInitialize()
+                //                        }
+                //                    )
                     .overlay(alignment: .bottom) {
                         if isfounded == true {
                             foundView()
@@ -82,11 +90,13 @@ struct NewCameraView: View {
                     Text("\(model.resultString)를 찾았어요!🎉🎉")
                         .foregroundStyle(.white)
                         .font(.title3)
-                        .padding()
+                        .padding(.vertical)
                     Text("처음 만나는 냥이 안녕 👋")
                         .foregroundStyle(.white)
-//                        .padding()
+                    //                        .padding()
                 }
+                .padding(30)
+                Spacer()
                 Image(systemName: "cat")
                     .foregroundColor(.white)
                     .frame(width: 70, height: 70)
@@ -116,7 +126,7 @@ struct NewCameraView: View {
                 }
             }
             Spacer().frame(height:20)
-
+            
             
         }
         .frame(maxWidth: .infinity, maxHeight: 200)
