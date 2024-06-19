@@ -18,6 +18,7 @@
 		8BA499A42C21641D00559727 /* MosuViewfinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA499A32C21641D00559727 /* MosuViewfinderView.swift */; };
 		8BA499A62C2174D500559727 /* NewCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA499A52C2174D500559727 /* NewCameraView.swift */; };
 		8BA499AE2C225F4000559727 /* NewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA499AD2C225F4000559727 /* NewViewModel.swift */; };
+		8BA499B42C22D9BF00559727 /* PocatClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8BA499B32C22D9BF00559727 /* PocatClassifier.mlmodel */; };
 		8BD6D4B12C20460600FD659A /* NugunyangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6D4B02C20460600FD659A /* NugunyangApp.swift */; };
 		8BD6D4B32C20460600FD659A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6D4B22C20460600FD659A /* ContentView.swift */; };
 		8BD6D4B52C20460900FD659A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD6D4B42C20460900FD659A /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		8BA499A32C21641D00559727 /* MosuViewfinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosuViewfinderView.swift; sourceTree = "<group>"; };
 		8BA499A52C2174D500559727 /* NewCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCameraView.swift; sourceTree = "<group>"; };
 		8BA499AD2C225F4000559727 /* NewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewModel.swift; sourceTree = "<group>"; };
+		8BA499B32C22D9BF00559727 /* PocatClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PocatClassifier.mlmodel; sourceTree = "<group>"; };
 		8BD6D4AD2C20460600FD659A /* Nugunyang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nugunyang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD6D4B02C20460600FD659A /* NugunyangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NugunyangApp.swift; sourceTree = "<group>"; };
 		8BD6D4B22C20460600FD659A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				8B07A1F32C211FFE0061FC8D /* ImageClassificationView.swift */,
 				8B07A1F12C211FB60061FC8D /* CGImagePropertyOrientation+UIImageOrientation.swift */,
 				8B07A1EF2C211F0E0061FC8D /* MyCatImageClassifier.mlmodel */,
+				8BA499B32C22D9BF00559727 /* PocatClassifier.mlmodel */,
 			);
 			path = Nugunyang;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				8BD6D4B12C20460600FD659A /* NugunyangApp.swift in Sources */,
 				8B07A1F42C211FFE0061FC8D /* ImageClassificationView.swift in Sources */,
 				8B07A1F22C211FB60061FC8D /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
+				8BA499B42C22D9BF00559727 /* PocatClassifier.mlmodel in Sources */,
 				8BD6D4DF2C2049E500FD659A /* Camera.swift in Sources */,
 				8B07A1F02C211F0E0061FC8D /* MyCatImageClassifier.mlmodel in Sources */,
 				8BA4999E2C21623B00559727 /* MosuCamera.swift in Sources */,

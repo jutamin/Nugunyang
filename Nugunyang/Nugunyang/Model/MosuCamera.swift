@@ -17,6 +17,8 @@ class MosuCamera: NSObject {
     private var photoOutput: AVCapturePhotoOutput?
     private var videoOutput: AVCaptureVideoDataOutput?
     private var sessionQueue: DispatchQueue!
+    
+//    var videoDeviceInput: AVCaptureDeviceInput!
 
     private var allCaptureDevices: [AVCaptureDevice] {
         AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInTrueDepthCamera, .builtInDualCamera, .builtInDualWideCamera, .builtInWideAngleCamera, .builtInDualWideCamera], mediaType: .video, position: .unspecified).devices
@@ -105,6 +107,20 @@ class MosuCamera: NSObject {
         super.init()
         initialize()
     }
+    
+//    func zoom(_ zoom: CGFloat){
+//            let factor = zoom < 1 ? 1 : zoom
+//            let device = self.videoDeviceInput.device
+//            
+//            do {
+//                try device.lockForConfiguration()
+//                device.videoZoomFactor = factor
+//                device.unlockForConfiguration()
+//            }
+//            catch {
+//                print(error.localizedDescription)
+//            }
+//        }
 
     private func initialize() {
         sessionQueue = DispatchQueue(label: "session queue")
