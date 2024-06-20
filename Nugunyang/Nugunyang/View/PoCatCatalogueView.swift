@@ -6,13 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PoCatCatalogueView: View {
-    let pocatsMain: [String] =  ["노벨이"]
-    let pocatJigok: [String] = ["치즈스틱", "깜냥이1", "깜냥이2", "깜냥이3", "삼색이", "다크초코", "인절미", "고등어"]
+    //    let pocatsMain: [String] =  ["노벨이"]
+    //    let pocatJigok: [String] = ["치즈스틱", "깜냥이1", "깜냥이2", "깜냥이3", "삼색이", "다크초코", "인절미", "고등어"]
     
     let columns = [GridItem(.adaptive(minimum: 100))]
     let font = "NanumYeBbeunMinGyeongCe"
+    
+    //    @Query var cats: [Cat]
+    //    var Novel: Cat? {
+    //        return self.cats.filter({ $0.name == "model.resultString" }).first
+    //    }
+    @Environment(\.modelContext) private var modelContext
+    @Query(sort: \Cat.index, order: .forward) var cats: [Cat]
+    
     
     var body: some View {
         ZStack{
@@ -36,17 +45,18 @@ struct PoCatCatalogueView: View {
                                 .font(.title3)
                                 .fontWeight(.bold)
                             
-                            LazyVGrid(columns: columns, spacing: 20) {
-                                ForEach(pocatsMain, id: \.self) { cat in
-                                    VStack{
-                                        Image(cat).resizable()
-                                            .frame(width: 100, height: 100)
-                                        Text(cat)
-                                            .foregroundStyle(Color.white)
-                                            .font(.custom(font, size: 20))
-                                            .padding(.horizontal, 10)
-                                    }
+                            VStack{
+                                if cats[0].meetCount == 1 {
+                                    Image(cats[0].name_0).resizable()
+                                        .frame(width: 100, height: 100)
+                                } else {
+                                    Image(cats[0].name).resizable()
+                                        .frame(width: 100, height: 100)
                                 }
+                                Text(cats[0].name)
+                                    .foregroundStyle(Color.white)
+                                    .font(.custom(font, size: 20))
+                                    .padding(.horizontal, 10)
                             }
                             
                             Spacer().frame(height: 30)
@@ -55,19 +65,23 @@ struct PoCatCatalogueView: View {
                                 .foregroundStyle(Color.gray)
                                 .font(.title3)
                                 .fontWeight(.bold)
-//                                .padding(.vertical)
                             
                             LazyVGrid(columns: columns, spacing: 20) {
-                                ForEach(pocatJigok, id: \.self) { cat in
+                                ForEach(1..<9) { n in
                                     VStack{
-                                        Image(cat).resizable()
-                                            .frame(width: 100, height: 100)
-                                        Text(cat)
+                                        if cats[n].meetCount == 1 {
+                                            Image(cats[n].name_0).resizable()
+                                                .frame(width: 100, height: 100)
+                                        } else {
+                                            Image(cats[n].name).resizable()
+                                                .frame(width: 100, height: 100)
+                                        }
+                                        Text(cats[n].name)
                                             .foregroundStyle(Color.white)
                                             .font(.custom(font, size: 20))
                                             .padding(.horizontal, 10)
                                     }
-
+                                    
                                 }
                             }
                         }.padding(.horizontal)
