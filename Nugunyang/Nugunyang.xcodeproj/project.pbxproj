@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B07A1F72C2124B60061FC8D /* Glur in Frameworks */ = {isa = PBXBuildFile; productRef = 8B07A1F62C2124B60061FC8D /* Glur */; };
 		8B08277E2C23068800698460 /* PocatClassifier2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8B08277D2C23068800698460 /* PocatClassifier2.mlmodel */; };
+		8B0827822C23BB3200698460 /* PocatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0827812C23BB3200698460 /* PocatModel.swift */; };
 		8BA4999E2C21623B00559727 /* MosuCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4999D2C21623B00559727 /* MosuCamera.swift */; };
 		8BA499A02C21627C00559727 /* MosuDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4999F2C21627C00559727 /* MosuDataModel.swift */; };
 		8BA499A22C21631600559727 /* MosuCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA499A12C21631600559727 /* MosuCameraView.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		8B08277D2C23068800698460 /* PocatClassifier2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PocatClassifier2.mlmodel; sourceTree = "<group>"; };
+		8B0827812C23BB3200698460 /* PocatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocatModel.swift; sourceTree = "<group>"; };
 		8BA4999D2C21623B00559727 /* MosuCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosuCamera.swift; sourceTree = "<group>"; };
 		8BA4999F2C21627C00559727 /* MosuDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosuDataModel.swift; sourceTree = "<group>"; };
 		8BA499A12C21631600559727 /* MosuCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosuCameraView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				8BD6D4DE2C2049E500FD659A /* Camera.swift */,
 				8BA4999D2C21623B00559727 /* MosuCamera.swift */,
 				8BA4999F2C21627C00559727 /* MosuDataModel.swift */,
+				8B0827812C23BB3200698460 /* PocatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				8BA499A22C21631600559727 /* MosuCameraView.swift in Sources */,
 				8BD6D4E52C204AA700FD659A /* PoCatCatalogueView.swift in Sources */,
 				8BD6D4B32C20460600FD659A /* ContentView.swift in Sources */,
+				8B0827822C23BB3200698460 /* PocatModel.swift in Sources */,
 				8BA499A62C2174D500559727 /* NewCameraView.swift in Sources */,
 				8BD6D4B12C20460600FD659A /* NugunyangApp.swift in Sources */,
 				8B08277E2C23068800698460 /* PocatClassifier2.mlmodel in Sources */,

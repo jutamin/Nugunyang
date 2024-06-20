@@ -10,7 +10,7 @@ import CoreImage
 import UIKit
 import os.log
 
-class MosuCamera: NSObject {
+class MosuCamera: NSObject, ObservableObject {
     private let captureSession = AVCaptureSession()
     private var isCaptureSessionConfigured = false
     private var deviceInput: AVCaptureDeviceInput?
@@ -108,6 +108,27 @@ class MosuCamera: NSObject {
         initialize()
     }
     
+
+    
+//    //줌 기능
+//    var currentZoomFactor: CGFloat = 1.0
+//    var lastScale: CGFloat = 1.0
+//    
+//    // ✅ 추가: onChange에 호출하는 줌 기능
+//        func zoom(factor: CGFloat) {
+//            let delta = factor / lastScale
+//            lastScale = factor
+//            
+//            let newScale = min(max(currentZoomFactor * delta, 1), 5)
+//            self.zoom(newScale)
+//            currentZoomFactor = newScale
+//        }
+//        
+//        // ✅ 추가: onEnded에 호출하는 줌 기능
+//        func zoomInitialize() {
+//            lastScale = 1.0
+//        }
+//    
 //    func zoom(_ zoom: CGFloat){
 //            let factor = zoom < 1 ? 1 : zoom
 //            let device = self.videoDeviceInput.device
