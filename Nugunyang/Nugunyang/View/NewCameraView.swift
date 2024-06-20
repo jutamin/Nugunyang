@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct NewCameraView: View {
     @StateObject private var model = MosuDataModel()
@@ -13,6 +14,11 @@ struct NewCameraView: View {
     private static let barHeightFactor = 0.15
     
     @State var isfounded = false
+    
+//    var modelContainer: ModelContainer = {
+//        let schema = Schema([Cat.self])
+//        let configuration
+//    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -93,20 +99,24 @@ struct NewCameraView: View {
                         .padding(.vertical)
                     Text("처음 만나는 냥이 안녕 👋")
                         .foregroundStyle(.white)
-                    //                        .padding()
                 }
-                .padding(30)
+                .padding(20)
+                
                 Spacer()
-                Image(systemName: "cat")
-                    .foregroundColor(.white)
-                    .frame(width: 70, height: 70)
+                
+                Image(model.resultString)
+                    .resizable()
+                    .frame(width: 110, height: 110)
+                    .padding(.vertical, 15)
+                Spacer()
+
             }
-            Spacer()
+//            Spacer()
             HStack(spacing: 10) {
                 Button{
                     isfounded = false
                 } label: {Text("취소")
-                        .font(.title2)
+                        .font(.title3)
                         .foregroundStyle(Color.white)
                         .frame(width: 120, height: 60)
                         .background(Color.secondary)
@@ -130,7 +140,7 @@ struct NewCameraView: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: 200)
-        .background(Color.black)
+        .background(.thickMaterial)
         .cornerRadius(20, corners: [.topLeft, .topRight])
     }
     

@@ -20,5 +20,6 @@ struct ContentView: View {
                     Label("포냥도감", systemImage: "books.vertical.fill")
                 }
         }
+        .preferredColorScheme(.dark)
     }
 }
