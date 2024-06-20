@@ -48,6 +48,7 @@ final class MosuDataModel: ObservableObject {
         }
     }
 
+    @MainActor
     func handleCameraPreviews() async {
         let imageStream = camera.previewStream
             .map { $0.image }

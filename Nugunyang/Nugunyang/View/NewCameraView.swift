@@ -10,12 +10,14 @@ import SwiftData
 
 struct NewCameraView: View {
     @StateObject private var model = MosuDataModel()
-    @ObservedObject var viewModel = MosuCamera()
+    @StateObject var viewModel = MosuCamera()
     private static let barHeightFactor = 0.15
     
     @State var isfounded = false
     @Environment(\.modelContext) private var modelContext
     @Query var cats: [Cat]
+
+    @State private var selectedFactor: Int = 1
     var filteredCat: Cat? {
         return self.cats.filter({ $0.name == model.resultString }).first
     }
@@ -36,14 +38,44 @@ struct NewCameraView: View {
                         if let foundCat = filteredCat { //filteredCat에 걸리는 고양이가 있으면 그걸 foundCat으로 담고, foundView에서 보여줌
                             foundView(cat: foundCat)
                         } else {
-                            buttonsView()
-                                .frame(height: geometry.size.height * Self.barHeightFactor)
-                                .background(.black)
+                            VStack {
+                                HStack(spacing: 8) {
+                                    Button(action: {
+                                        selectedFactor = 1
+                                        self.viewModel.zoom(factor: 1)
+                                    }, label: {
+                                        Text("1")
+                                            .scaleEffect(selectedFactor == 1 ? 1.0 : 0.7)
+                                            .foregroundStyle(selectedFactor == 1 ? .yellow : .white)
+                                    })
+                                    .frame(width: selectedFactor == 1 ? 35 : 25, height: selectedFactor == 1 ? 35 : 25)
+                                    .background(Color.black.opacity(0.8))
+                                    .clipShape(Circle())
+
+                                    Button(action: {
+                                        selectedFactor = 2
+                                        self.viewModel.zoom(factor: 2)
+                                    }, label: {
+                                        Text("2")
+                                            .scaleEffect(selectedFactor == 2 ? 1.0 : 0.7)
+                                            .foregroundStyle(selectedFactor == 2 ? .yellow : .white)
+                                    })
+                                    .frame(width: selectedFactor == 2 ? 35 : 25, height: selectedFactor == 2 ? 35 : 25)
+                                    .background(Color.black.opacity(0.8))
+                                    .clipShape(Circle())
+                                }
+                                .clipShape(Capsule())
+                                buttonsView()
+                                    .frame(height: geometry.size.height * Self.barHeightFactor)
+                                    .background(.black)
+                            }
                         }
                     }
                     .background(.black)
             }
         }
+        .animation(.snappy(duration: 0.3), value: selectedFactor)
+        .animation(.easeInOut, value: filteredCat)
         .task {
             await model.camera.start()
         }

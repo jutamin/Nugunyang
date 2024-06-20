@@ -313,6 +313,19 @@ class MosuCamera: NSObject, ObservableObject {
         }
     }
 
+    func zoom(factor: CGFloat = 2.0) {
+        if let captureDevice = captureDevice {
+            do {
+                try captureDevice.lockForConfiguration()
+                captureDevice.videoZoomFactor = factor
+                captureDevice.unlockForConfiguration()
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+
     private var deviceOrientation: UIDeviceOrientation {
         var orientation = UIDevice.current.orientation
         if orientation == UIDeviceOrientation.unknown {
