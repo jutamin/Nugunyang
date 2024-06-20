@@ -53,7 +53,7 @@ struct PoCatCatalogueView: View {
                                     Image(cats[0].name).resizable()
                                         .frame(width: 100, height: 100)
                                 }
-                                Text(cats[0].name)
+                                Text(cats[0].realName)
                                     .foregroundStyle(Color.white)
                                     .font(.custom(font, size: 20))
                                     .padding(.horizontal, 10)
@@ -76,7 +76,7 @@ struct PoCatCatalogueView: View {
                                             Image(cats[n].name).resizable()
                                                 .frame(width: 100, height: 100)
                                         }
-                                        Text(cats[n].name)
+                                        Text(cats[n].realName)
                                             .foregroundStyle(Color.white)
                                             .font(.custom(font, size: 20))
                                             .padding(.horizontal, 10)

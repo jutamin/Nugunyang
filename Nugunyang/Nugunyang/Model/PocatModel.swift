@@ -15,6 +15,15 @@ class Cat {
     var meetCount: Int = 0
     let index: Int
     
+    var realName: String {
+        switch name {
+        case "깜냥이1": return "바미"
+        case "깜냥이2": return "까미"
+        case "깜냥이3": return "나미"
+        default: return name
+        }
+    }
+    
     init(name: String, name_0: String, meetCount: Int, index: Int) {
         self.name = name
         self.name_0 = name_0

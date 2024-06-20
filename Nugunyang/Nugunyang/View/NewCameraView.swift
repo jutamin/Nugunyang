@@ -148,7 +148,7 @@ struct NewCameraView: View {
             HStack {
                 VStack(alignment: .leading){
 //                    Text("\(model.resultString)를 찾았어요!🎉🎉")
-                    Text("\(cat.name)를 찾았어요!🎉🎉")
+                    Text("\(cat.realName)를 찾았어요!🎉🎉")
                         .foregroundStyle(.white)
                         .font(.title3)
                         .padding(.vertical)
