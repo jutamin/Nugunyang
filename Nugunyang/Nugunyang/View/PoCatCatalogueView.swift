@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct PoCatCatalogueView: View {
-    let pocatsMain: [String] =  ["노벨이", "호박이"]
-    let pocatJigok: [String] = ["치즈스틱", "검냥이1", "검냥이2", "검냥이3", "삼색냥", "브라운냥", "치즈냥2", "고등어냥"]
+    let pocatsMain: [String] =  ["노벨이"]
+    let pocatJigok: [String] = ["치즈스틱", "깜냥이1", "깜냥이2", "깜냥이3", "삼색이", "다크초코", "인절미", "고등어"]
+    
     let columns = [GridItem(.adaptive(minimum: 100))]
     let font = "NanumYeBbeunMinGyeongCe"
     
@@ -32,15 +33,19 @@ struct PoCatCatalogueView: View {
                             
                             Text("📍 본관 정원")
                                 .foregroundStyle(Color.gray)
-                                .font(.title2)
+                                .font(.title3)
                                 .fontWeight(.bold)
                             
                             LazyVGrid(columns: columns, spacing: 20) {
                                 ForEach(pocatsMain, id: \.self) { cat in
-                                    Text(cat)
-                                        .foregroundStyle(Color.white)
-                                        .font(.custom(font, size: 20))
-                                        .padding(.horizontal, 10)
+                                    VStack{
+                                        Image(cat).resizable()
+                                            .frame(width: 100, height: 100)
+                                        Text(cat)
+                                            .foregroundStyle(Color.white)
+                                            .font(.custom(font, size: 20))
+                                            .padding(.horizontal, 10)
+                                    }
                                 }
                             }
                             
@@ -48,15 +53,21 @@ struct PoCatCatalogueView: View {
                             
                             Text("📍 지곡회관 1층 & 연못 근처")
                                 .foregroundStyle(Color.gray)
-                                .font(.title2)
+                                .font(.title3)
                                 .fontWeight(.bold)
+//                                .padding(.vertical)
                             
                             LazyVGrid(columns: columns, spacing: 20) {
                                 ForEach(pocatJigok, id: \.self) { cat in
-                                    Text(cat)
-                                        .foregroundStyle(Color.white)
-                                        .font(.custom(font, size: 20))
-                                        .padding(.horizontal, 10)
+                                    VStack{
+                                        Image(cat).resizable()
+                                            .frame(width: 100, height: 100)
+                                        Text(cat)
+                                            .foregroundStyle(Color.white)
+                                            .font(.custom(font, size: 20))
+                                            .padding(.horizontal, 10)
+                                    }
+
                                 }
                             }
                         }.padding(.horizontal)

@@ -144,7 +144,7 @@ extension MosuDataModel {
     func detect(image: CIImage, completion: @escaping (String) -> Void) {
         // CoreML의 모델인 FlowerClassifier를 객체를 생성 후,
         // Vision 프레임워크인 VNCoreMLModel 컨터이너를 사용하여 CoreML의 model에 접근한다.
-        guard let coreMLModel = try? PocatClassifier(configuration: MLModelConfiguration()),
+        guard let coreMLModel = try? PocatClassifier2(configuration: MLModelConfiguration()),
               let visionModel = try? VNCoreMLModel(for: coreMLModel.model) else {
             fatalError("Loading CoreML Model Failed")
         }
